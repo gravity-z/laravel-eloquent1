@@ -22,6 +22,7 @@ class PostCategory extends Model
 
     /**
      * Get the post that owns the PostCategory
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
 
     public function post()
@@ -31,6 +32,7 @@ class PostCategory extends Model
 
     /**
      * Get the category that owns the PostCategory
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
 
     public function category()

@@ -20,17 +20,10 @@ class Category extends Model
 
     /**
      * Get the posts for the Category
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function posts() {
-        return $this->hasMany(Post::class);
-    }
-
-    /**
-     * Get the posts for the Category
-     * Using PostCategory
-     */
-    public function postCategories()
+    public function posts()
     {
-        return $this->hasMany(PostCategory::class, 'category_id');
+        return $this->belongsToMany(Post::class, 'post_category');
     }
 }

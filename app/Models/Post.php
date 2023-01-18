@@ -22,6 +22,7 @@ class Post extends Model
 
     /**
      * Get the user that owns the Post
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user()
     {
@@ -30,10 +31,10 @@ class Post extends Model
 
     /**
      * Get the category that owns the Post
-     * Using PostCategory
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function category()
     {
-        return $this->belongsTo(PostCategory::class, 'category_id');
+        return $this->belongsToMany(Category::class, 'post_category');
     }
 }
