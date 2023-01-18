@@ -43,22 +43,12 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get all of the posts for the User
+     * Get all the posts for the User
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function posts()
     {
         return $this->hasMany(Post::class, 'author_id', 'id');
-    }
-
-    /**
-     * Get all of the categories for the User
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function categories()
-    {
-        return $this->hasMany(Category::class, 'author_id', 'id');
     }
 }
